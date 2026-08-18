@@ -12,3 +12,4 @@ README.Rmd
 ^docs$
 ^pkgdown$
 ^data-raw$
+^vignettes$

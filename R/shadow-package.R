@@ -17,7 +17,7 @@
 #' \item \code{ray}, Constructing a line between two points
 #' }
 #'
-#' @docType package
+#' @aliases shadow-package
 #'
 #' @name shadow
 #'

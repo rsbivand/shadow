@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Geometric Shadow Calculations • shadow</title>
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="bootstrap-toc.css">
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
@@ -19,6 +19,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -31,18 +33,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">shadow</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.6.9</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.7.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -52,9 +48,9 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/michaeldorman/shadow/">
-    <span class="fab fa fab fa-github fa-lg"></span>
-     
+  <a href="https://github.com/michaeldorman/shadow/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
+
   </a>
 </li>
       </ul>
@@ -65,120 +61,125 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="contents col-md-9">
 
 
-<div id="introduction" class="section level3">
-<h3 class="hasAnchor">
-<a href="#introduction" class="anchor"></a>Introduction</h3>
-<p><code>shadow</code> is an R package for geometric shadow calculations in an urban environment. A detailed description can be found in the <a href="https://journal.r-project.org/archive/2019/RJ-2019-024/RJ-2019-024.pdf">R Journal paper (2019)</a>:</p>
-<p><a href="https://journal.r-project.org/archive/2019/RJ-2019-024/RJ-2019-024.pdf"><img src="README-abstract.png" alt="Abstract"></a></p>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
+<p><code>shadow</code> is an R package for geometric shadow calculations in an urban environment. A detailed description can be found in the <a href="https://journal.r-project.org/archive/2019/RJ-2019-024/RJ-2019-024.pdf" class="external-link">R Journal paper (2019)</a>:</p>
+<p><a href="https://journal.r-project.org/archive/2019/RJ-2019-024/RJ-2019-024.pdf" class="external-link"><img src="README-abstract.png" alt="Abstract"></a></p>
 </div>
-<div id="installation" class="section level3">
-<h3 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h3>
+<div class="section level3">
+<h3 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h3>
 <p>CRAN version:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"shadow"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"shadow"</span><span class="op">)</span></span></code></pre></div>
 <p>GitHub version:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span>
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"michaeldorman/shadow"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"michaeldorman/shadow"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="documentation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h2>
-<p>The complete documentation can be found at <a href="https://michaeldorman.github.io/shadow/" class="uri">https://michaeldorman.github.io/shadow/</a>.</p>
-<div id="quick-demo" class="section level3">
-<h3 class="hasAnchor">
-<a href="#quick-demo" class="anchor"></a>Quick demo</h3>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://michaeldorman.github.io/shadow/">shadow</a></span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: sp</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster">raster</a></span><span class="op">)</span>
-
-<span class="co"># Point</span>
-<span class="va">location</span> <span class="op">=</span> <span class="fu">rgeos</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rgeos/man/topo-unary-gCentroid.html">gCentroid</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span>
-
-<span class="co"># Time</span>
-<span class="va">time</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html">as.POSIXct</a></span><span class="op">(</span>
-  <span class="st">"2004-12-24 13:30:00"</span>,
-  tz <span class="op">=</span> <span class="st">"Asia/Jerusalem"</span>
-<span class="op">)</span>
-
-<span class="co"># Location in geographical coordinates</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/projection.html">proj4string</a></span><span class="op">(</span><span class="va">location</span><span class="op">)</span> <span class="op">=</span> <span class="fu">CRS</span><span class="op">(</span><span class="st">"+init=epsg:32636"</span><span class="op">)</span>
-<span class="va">location_geo</span> <span class="op">=</span> <span class="fu">sp</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/sp/man/spTransform.html">spTransform</a></span><span class="op">(</span>
-  <span class="va">location</span>,
-  <span class="fu">CRS</span><span class="op">(</span><span class="st">"+init=epsg:4326"</span><span class="op">)</span>
-<span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/projection.html">crs</a></span><span class="op">(</span><span class="va">location</span><span class="op">)</span> <span class="op">=</span> <span class="cn">NA</span>
-
-<span class="co"># Solar position</span>
-<span class="va">solar_pos</span> <span class="op">=</span> <span class="fu">maptools</span><span class="fu">::</span><span class="fu"><a href="http://maptools.r-forge.r-project.org/reference/sun-methods.html">solarpos</a></span><span class="op">(</span>
-  crds <span class="op">=</span> <span class="va">location_geo</span>,
-  dateTime <span class="op">=</span> <span class="va">time</span>
-<span class="op">)</span>
-<span class="va">solar_pos</span>
-<span class="co">#&gt;          [,1]     [,2]</span>
-<span class="co">#&gt; [1,] 208.7333 28.79944</span>
-
-<span class="co"># Shadow height at a single point</span>
-<span class="va">h</span> <span class="op">=</span> <span class="fu"><a href="reference/shadowHeight.html">shadowHeight</a></span><span class="op">(</span>
-  location <span class="op">=</span> <span class="va">location</span>,
-  obstacles <span class="op">=</span> <span class="va">build</span>,
-  obstacles_height_field <span class="op">=</span> <span class="st">"BLDG_HT"</span>,
-  solar_pos <span class="op">=</span> <span class="va">solar_pos</span>
-<span class="op">)</span>
-
-<span class="co"># Result</span>
-<span class="va">h</span>
-<span class="co">#&gt;          [,1]</span>
-<span class="co">#&gt; [1,] 19.86451</span>
-
-<span class="co"># Visualization</span>
-<span class="va">sun</span> <span class="op">=</span> <span class="fu">shadow</span><span class="fu">:::</span><span class="fu">.sunLocation</span><span class="op">(</span>
-  location <span class="op">=</span> <span class="va">location</span>,
-  sun_az <span class="op">=</span> <span class="va">solar_pos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">]</span>,
-  sun_elev <span class="op">=</span> <span class="va">solar_pos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">]</span>
-<span class="op">)</span>
-<span class="va">sun_ray</span> <span class="op">=</span> <span class="fu"><a href="reference/ray.html">ray</a></span><span class="op">(</span>from <span class="op">=</span> <span class="va">location</span>, to <span class="op">=</span> <span class="va">sun</span><span class="op">)</span>
-<span class="va">build_outline</span> <span class="op">=</span> <span class="fu">as</span><span class="op">(</span><span class="va">build</span>, <span class="st">"SpatialLinesDataFrame"</span><span class="op">)</span>
-<span class="va">inter</span> <span class="op">=</span> <span class="fu">rgeos</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rgeos/man/topo-bin-gIntersection.html">gIntersection</a></span><span class="op">(</span><span class="va">build_outline</span>, <span class="va">sun_ray</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">sun_ray</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"yellow"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">location</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/text.html">text</a></span><span class="op">(</span><span class="va">location</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">h</span>, <span class="fl">2</span><span class="op">)</span>, <span class="st">"m"</span><span class="op">)</span>, pos <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">inter</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></pre></div>
-<p><img src="README-demo1-1.png"><!-- --></p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-
-<span class="co"># Raster template</span>
-<span class="va">ext</span> <span class="op">=</span> <span class="fu">as</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/extent.html">extent</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span><span class="op">+</span><span class="fl">50</span>, <span class="st">"SpatialPolygons"</span><span class="op">)</span>
-<span class="va">r</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html">raster</a></span><span class="op">(</span><span class="va">ext</span>, res <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
-
-<span class="co"># Shadow height surface</span>
-<span class="va">height_surface</span> <span class="op">=</span> <span class="fu"><a href="reference/shadowHeight.html">shadowHeight</a></span><span class="op">(</span>
-  location <span class="op">=</span> <span class="va">r</span>,
-  obstacles <span class="op">=</span> <span class="va">build</span>,
-  obstacles_height_field <span class="op">=</span> <span class="st">"BLDG_HT"</span>,
-  solar_pos <span class="op">=</span> <span class="va">solar_pos</span>,
-  parallel <span class="op">=</span> <span class="fl">2</span>
-<span class="op">)</span>
-
-<span class="co"># Visualization</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">height_surface</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/gray.html">grey</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0.9</span>, <span class="fl">0.2</span>, <span class="op">-</span><span class="fl">0.01</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/contour.html">contour</a></span><span class="op">(</span><span class="va">height_surface</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">build</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, border <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/text.html">text</a></span><span class="op">(</span><span class="fu">rgeos</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/rgeos/man/topo-unary-gCentroid.html">gCentroid</a></span><span class="op">(</span><span class="va">build</span>, byid <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">build</span><span class="op">$</span><span class="va">BLDG_HT</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/text.html">text</a></span><span class="op">(</span><span class="va">location</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">h</span>, <span class="fl">2</span><span class="op">)</span>, <span class="st">"m"</span><span class="op">)</span>, pos <span class="op">=</span> <span class="fl">3</span>, col <span class="op">=</span> <span class="st">"red"</span>, font <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">sun_ray</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"yellow"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">inter</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/pkg/raster/man/plot.html">plot</a></span><span class="op">(</span><span class="va">location</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></pre></div>
-<p><img src="README-demo1-2.png"><!-- --></p>
+<div class="section level2">
+<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
+</h2>
+<p>The complete documentation can be found at <a href="https://michaeldorman.github.io/shadow/" class="external-link">https://michaeldorman.github.io/shadow/</a>.</p>
+<div class="section level3">
+<h3 id="quick-demo">Quick demo<a class="anchor" aria-label="anchor" href="#quick-demo"></a>
+</h3>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://michaeldorman.github.io/shadow/" class="external-link">shadow</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; Loading required package: sp</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/raster" class="external-link">raster</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Point</span></span>
+<span><span class="va">location</span> <span class="op">=</span> <span class="fu">as</span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html" class="external-link">st_centroid</a></span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_combine.html" class="external-link">st_union</a></span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html" class="external-link">st_as_sf</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>, <span class="st">"Spatial"</span><span class="op">)</span> <span class="co">#rgeos::gCentroid(build)</span></span>
+<span></span>
+<span><span class="co"># Time</span></span>
+<span><span class="va">time</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.POSIXlt.html" class="external-link">as.POSIXct</a></span><span class="op">(</span></span>
+<span>  <span class="st">"2004-12-24 13:30:00"</span>,</span>
+<span>  tz <span class="op">=</span> <span class="st">"Asia/Jerusalem"</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Location in geographical coordinates</span></span>
+<span><span class="fu"><a href="https://edzer.github.io/sp/reference/is.projected.html" class="external-link">proj4string</a></span><span class="op">(</span><span class="va">location</span><span class="op">)</span> <span class="op">=</span> <span class="fu"><a href="https://edzer.github.io/sp/reference/CRS-class.html" class="external-link">CRS</a></span><span class="op">(</span><span class="st">"EPSG:32636"</span><span class="op">)</span></span>
+<span><span class="va">location_geo</span> <span class="op">=</span> <span class="fu">sp</span><span class="fu">::</span><span class="fu"><a href="https://edzer.github.io/sp/reference/spTransform.html" class="external-link">spTransform</a></span><span class="op">(</span></span>
+<span>  <span class="va">location</span>,</span>
+<span>  <span class="fu"><a href="https://edzer.github.io/sp/reference/CRS-class.html" class="external-link">CRS</a></span><span class="op">(</span><span class="st">"EPSG:4326"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rspatial.github.io/terra/reference/crs.html" class="external-link">crs</a></span><span class="op">(</span><span class="va">location</span><span class="op">)</span> <span class="op">=</span> <span class="cn">NA</span></span>
+<span></span>
+<span><span class="co"># Solar position</span></span>
+<span><span class="va">solar_pos</span> <span class="op">=</span> <span class="fu">suntools</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/suntools/man/solarpos.html" class="external-link">solarpos</a></span><span class="op">(</span> <span class="co">#maptools::solarpos(</span></span>
+<span>  crds <span class="op">=</span> <span class="va">location_geo</span>,</span>
+<span>  dateTime <span class="op">=</span> <span class="va">time</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">solar_pos</span></span>
+<span><span class="co">#&gt;          [,1]     [,2]</span></span>
+<span><span class="co">#&gt; [1,] 208.7333 28.79944</span></span>
+<span></span>
+<span><span class="co"># Shadow height at a single point</span></span>
+<span><span class="va">h</span> <span class="op">=</span> <span class="fu"><a href="reference/shadowHeight.html">shadowHeight</a></span><span class="op">(</span></span>
+<span>  location <span class="op">=</span> <span class="va">location</span>,</span>
+<span>  obstacles <span class="op">=</span> <span class="va">build</span>,</span>
+<span>  obstacles_height_field <span class="op">=</span> <span class="st">"BLDG_HT"</span>,</span>
+<span>  solar_pos <span class="op">=</span> <span class="va">solar_pos</span></span>
+<span><span class="op">)</span> <span class="co"># broken</span></span>
+<span></span>
+<span><span class="co"># Result</span></span>
+<span><span class="va">h</span></span>
+<span><span class="co">#&gt;      [,1]</span></span>
+<span><span class="co">#&gt; [1,]   NA</span></span>
+<span></span>
+<span><span class="co"># Visualization</span></span>
+<span><span class="va">sun</span> <span class="op">=</span> <span class="fu">shadow</span><span class="fu">:::</span><span class="fu">.sunLocation</span><span class="op">(</span></span>
+<span>  location <span class="op">=</span> <span class="va">location</span>,</span>
+<span>  sun_az <span class="op">=</span> <span class="va">solar_pos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">1</span><span class="op">]</span>,</span>
+<span>  sun_elev <span class="op">=</span> <span class="va">solar_pos</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">]</span></span>
+<span><span class="op">)</span></span>
+<span><span class="va">sun_ray</span> <span class="op">=</span> <span class="fu"><a href="reference/ray.html">ray</a></span><span class="op">(</span>from <span class="op">=</span> <span class="va">location</span>, to <span class="op">=</span> <span class="va">sun</span><span class="op">)</span></span>
+<span><span class="va">build_outline</span> <span class="op">=</span> <span class="fu">as</span><span class="op">(</span><span class="va">build</span>, <span class="st">"SpatialLinesDataFrame"</span><span class="op">)</span></span>
+<span><span class="va">inter</span> <span class="op">=</span> <span class="fu">as</span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_binary_ops.html" class="external-link">st_intersection</a></span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_combine.html" class="external-link">st_union</a></span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html" class="external-link">st_as_sf</a></span><span class="op">(</span><span class="va">build_outline</span><span class="op">)</span><span class="op">)</span>, <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html" class="external-link">st_as_sf</a></span><span class="op">(</span><span class="va">sun_ray</span><span class="op">)</span><span class="op">)</span>, <span class="st">"Spatial"</span><span class="op">)</span><span class="co"># rgeos::gIntersection(build_outline, sun_ray)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">sun_ray</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"yellow"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">location</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="va">location</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">h</span>, <span class="fl">2</span><span class="op">)</span>, <span class="st">"m"</span><span class="op">)</span>, pos <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">inter</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span></code></pre></div>
+<div class="float">
+<img src="README-demo1-1.png" alt="plot of chunk demo1"><div class="figcaption">plot of chunk demo1</div>
+</div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
+<span><span class="co"># Raster template</span></span>
+<span><span class="va">ext</span> <span class="op">=</span> <span class="fu">as</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/raster/man/extent.html" class="external-link">extent</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span><span class="op">+</span><span class="fl">50</span>, <span class="st">"SpatialPolygons"</span><span class="op">)</span></span>
+<span><span class="va">r</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/raster/man/raster.html" class="external-link">raster</a></span><span class="op">(</span><span class="va">ext</span>, res <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Shadow height surface</span></span>
+<span><span class="va">height_surface</span> <span class="op">=</span> <span class="fu"><a href="reference/shadowHeight.html">shadowHeight</a></span><span class="op">(</span></span>
+<span>  location <span class="op">=</span> <span class="va">r</span>,</span>
+<span>  obstacles <span class="op">=</span> <span class="va">build</span>,</span>
+<span>  obstacles_height_field <span class="op">=</span> <span class="st">"BLDG_HT"</span>,</span>
+<span>  solar_pos <span class="op">=</span> <span class="va">solar_pos</span>,</span>
+<span>  parallel <span class="op">=</span> <span class="fl">2</span></span>
+<span><span class="op">)</span> <span class="co"># broken</span></span>
+<span></span>
+<span><span class="co"># Visualization</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">height_surface</span>, col <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/grDevices/gray.html" class="external-link">grey</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="fl">0.9</span>, <span class="fl">0.2</span>, <span class="op">-</span><span class="fl">0.01</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co"># height_surface NAs contour(height_surface, add = TRUE)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">build</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, border <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="fu">as</span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_unary.html" class="external-link">st_centroid</a></span><span class="op">(</span><span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_as_sf.html" class="external-link">st_as_sf</a></span><span class="op">(</span><span class="va">build</span><span class="op">)</span><span class="op">)</span>, <span class="st">"Spatial"</span><span class="op">)</span>, <span class="va">build</span><span class="op">$</span><span class="va">BLDG_HT</span><span class="op">)</span><span class="co">#text(rgeos::gCentroid(build, byid = TRUE), build$BLDG_HT)</span></span>
+<span><span class="co">#&gt; Warning: st_centroid assumes attributes are constant over geometries</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/graphics/text.html" class="external-link">text</a></span><span class="op">(</span><span class="va">location</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">h</span>, <span class="fl">2</span><span class="op">)</span>, <span class="st">"m"</span><span class="op">)</span>, pos <span class="op">=</span> <span class="fl">3</span>, col <span class="op">=</span> <span class="st">"red"</span>, font <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">sun_ray</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"yellow"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">inter</span>, add <span class="op">=</span> <span class="cn">TRUE</span>, col <span class="op">=</span> <span class="st">"red"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">location</span>, add <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<div class="float">
+<img src="README-demo1-2.png" alt="plot of chunk demo1"><div class="figcaption">plot of chunk demo1</div>
+</div>
 </div>
 </div>
 
@@ -186,55 +187,67 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=shadow">https://​cloud.r-project.org/​package=shadow</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/michaeldorman/shadow/">https://​github.com/​michaeldorman/​shadow/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/michaeldorman/shadow/issues/">https://​github.com/​michaeldorman/​shadow/​issues/​</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li>
-<a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
-</li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Michael Dorman <br><small class="roles"> Author, maintainer </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=shadow" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/michaeldorman/shadow/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/michaeldorman/shadow/issues/" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://cran.r-project.org/package=shadow"><img src="http://www.r-pkg.org/badges/version-ago/shadow" alt="CRAN_Status_Badge"></a></li>
-<li><a href="https://cran.r-project.org/package=shadow"><img src="http://cranlogs.r-pkg.org/badges/last-month/shadow" alt="CRAN_Downloads_Badge"></a></li>
+<li>
+<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+</li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing shadow</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Michael Dorman <br><small class="roles"> Author, maintainer </small>   </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=shadow" class="external-link"><img src="http://www.r-pkg.org/badges/version-ago/shadow" alt="CRAN_Status_Badge"></a></li>
+<li><a href="https://cran.r-project.org/package=shadow" class="external-link"><img src="http://cranlogs.r-pkg.org/badges/last-month/shadow" alt="CRAN_Downloads_Badge"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Michael Dorman.</p>
+  <p></p>
+<p>Developed by Michael Dorman.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
       </footer>
 </div>
 
-  
+
+
+
 
 
   </body>

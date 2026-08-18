@@ -96,7 +96,7 @@
 #' @format A \code{data.frame} with 8760 rows and 7 columns.
 #'
 #' @references
-#' \url{https://energyplus.net/weather-location/europe_wmo_region_6/ISR/ISR_Tel.Aviv-Bet.Dagan.401790_MSI}
+#' Accessed from https://energyplus.net/weather-location/europe_wmo_region_6/ISR/ISR_Tel.Aviv-Bet.Dagan.401790_MSI
 #' @examples 
 #' head(tmy)
 
@@ -117,7 +117,7 @@
 #' @format A \code{data.frame} with 8760 rows and 7 columns.
 #'
 #' @references
-#' \url{https://energyplus.net/weather-location/europe_wmo_region_6/ISR/ISR_Beer.Sheva.401900_MSI}
+#' Accessed from https://energyplus.net/weather-location/europe_wmo_region_6/ISR/ISR_Beer.Sheva.401900_MSI
 #' @examples 
 #' head(tmy2)
 

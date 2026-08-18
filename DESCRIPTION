@@ -20,13 +20,12 @@ Imports:
 Depends:
     R (>= 3.5.0),
     sp (>= 2.0.0)
-RoxygenNote: 7.2.3
 Suggests:
     R.rsp,
     testthat,
     reshape2 (>= 1.4.2),
     threejs
-VignetteBuilder: R.rsp
 URL: https://michaeldorman.github.io/shadow/, https://github.com/michaeldorman/shadow/
 BugReports: https://github.com/michaeldorman/shadow/issues/
 Encoding: UTF-8
+Config/roxygen2/version: 8.1.0
